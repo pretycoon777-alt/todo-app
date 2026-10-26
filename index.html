@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f1ea" />
+    <meta
+      name="description"
+      content="할 일을 추가하고 완료 처리하며 깔끔하게 관리하는 간단한 웹 앱"
+    />
+    <title>오늘의 할 일</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="todo-card" aria-labelledby="page-title">
+        <header class="hero">
+          <p class="eyebrow">MY DAILY LIST</p>
+          <div class="title-row">
+            <div>
+              <h1 id="page-title">오늘의 할 일</h1>
+              <p id="today" class="today"></p>
+            </div>
+            <div class="progress-badge" aria-live="polite">
+              <strong id="completed-count">0</strong>
+              <span>완료</span>
+            </div>
+          </div>
+        </header>
+
+        <form id="todo-form" class="todo-form">
+          <label class="sr-only" for="todo-input">할 일</label>
+          <input
+            id="todo-input"
+            name="todo"
+            type="text"
+            maxlength="100"
+            placeholder="무엇을 해낼까요?"
+            autocomplete="off"
+            required
+          />
+          <button type="submit" aria-label="할 일 추가">
+            <span aria-hidden="true">+</span>
+            <span>추가</span>
+          </button>
+        </form>
+
+        <div class="list-heading">
+          <h2>할 일 목록</h2>
+          <span id="remaining-count">0개 남음</span>
+        </div>
+
+        <ul id="todo-list" class="todo-list" aria-label="할 일 목록"></ul>
+
+        <div id="empty-state" class="empty-state">
+          <span class="empty-icon" aria-hidden="true">✓</span>
+          <p>아직 할 일이 없어요.</p>
+          <span>오늘의 첫 번째 계획을 추가해 보세요.</span>
+        </div>
+
+        <footer class="card-footer">
+          <span>하나씩, 차근차근.</span>
+          <button id="clear-completed" type="button">완료 항목 지우기</button>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
